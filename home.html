@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Rental - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="homepage">
+
+    <div class="overlay">
+        <div class="container">
+            <h1>Welcome to JIMOH'S Car Rental Service</h1>
+            <p>Select your state to view available cars for rent:</p>
+
+            <form action="/cars" method="POST">
+                <select name="state" required>
+                    <option value="">-- Choose State --</option>
+                    <option>Lagos</option>
+                    <option>Abuja</option>
+                    <option>Kano</option>
+                    <option>Port Harcourt</option>
+                    <option>Enugu</option>
+                    <option>Jos</option>
+                </select>
+                <br><br>
+                <button type="submit">Show Cars</button>
+            </form>
+        </div>
+    </div>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>About Us</h4>
+      <p>Jimoh's Car Rentals is a reliable service offering affordable and fast cars across Nigeria. Our aim is to deliver quality and comfort.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Terms & Conditions</h4>
+      <p>Renter must be 21 years or older. Valid driver’s license is required. Cars must be returned in good condition to avoid penalties.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: support@jimohcarrentals.com<br>Phone: +234 801 234 5678</p>
+    </div>
+  </div>
+  <p class="copyright">© 2025 Jimoh Car Rental. All rights reserved.</p>
+</footer>
+</body>
+</html>

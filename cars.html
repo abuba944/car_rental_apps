@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Cars in {{ state }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Available Cars in {{ state }}</h2>
+
+    {% if cars %}
+    <div class="car-container">
+        {% for car in cars %}
+        <div class="car-card">
+            <img src="{{ car['image_url'] }}" alt="{{ car['name'] }}">
+            <h3>{{ car['name'] }}</h3>
+            <p><strong>Color:</strong> {{ car['color'] }}</p>
+            <p><strong>Speed:</strong> {{ car['speed'] }}</p>
+            <p><strong>Price:</strong> ₦{{ car['price_per_day'] }} /day</p>
+            <p>{{ car['description'] }}</p>
+            <a href="{{ url_for('book_car', car_id=car['id']) }}">Book Now</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No cars available in this location.</p>   
+    {% endif %}
+    
+    <br>
+    <a href="/">~ Back to Home</a>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>About Us</h4>
+      <p>Jimoh's Car Rentals is a reliable service offering affordable and fast cars across Nigeria. Our aim is to deliver quality and comfort.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Terms & Conditions</h4>
+      <p>Renter must be 21 years or older. Valid driver’s license is required. Cars must be returned in good condition to avoid penalties.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: support@jimohcarrentals.com<br>Phone: +234 801 234 5678</p>
+    </div>
+  </div>
+  <p class="copyright">© 2025 Jimoh Car Rental. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+
